@@ -154,9 +154,3 @@ This project helps students understand:
 5. Open a Pull Request
 
 
-## 👨‍💻 Author
-
-Created for educational purposes to demonstrate modern web development practices.
-
-**Contact:** info@virustechsolutions.com  
-**Project Link:** https://github.com/virus-tech-solutions/student-management-system
