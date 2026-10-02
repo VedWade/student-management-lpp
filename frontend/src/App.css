@@ -1,0 +1,198 @@
+/* =========================================================
+   THEME VARIABLES  (light is default, dark via data-theme)
+   ========================================================= */
+:root {
+  --bg: #f3f5fb;
+  --surface: #ffffff;
+  --surface-2: #f8f9fd;
+  --text: #1e2433;
+  --muted: #6b7280;
+  --border: #e3e7f0;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-soft: #eef0ff;
+  --danger: #e11d48;
+  --danger-hover: #be123c;
+  --success: #16a34a;
+  --success-hover: #15803d;
+  --warn-bg: #fdecef;
+  --ok-bg: #dcfce7;
+  --shadow: 0 1px 3px rgba(20, 30, 60, .06), 0 8px 24px rgba(20, 30, 60, .06);
+  --radius: 12px;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1120;
+  --surface: #151d31;
+  --surface-2: #1b2540;
+  --text: #e6e9f2;
+  --muted: #94a0b8;
+  --border: #2a3654;
+  --primary: #6366f1;
+  --primary-hover: #7c7ff5;
+  --primary-soft: #232c52;
+  --danger: #f43f5e;
+  --danger-hover: #fb7185;
+  --success: #22c55e;
+  --success-hover: #4ade80;
+  --warn-bg: #3a1a25;
+  --ok-bg: #123524;
+  --shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  transition: background .25s, color .25s;
+}
+
+h1, h2, h3, h4 { margin: 0 0 8px; line-height: 1.25; }
+
+input, select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  width: 100%;
+  min-width: 0;
+  transition: border-color .2s, box-shadow .2s;
+}
+input::placeholder { color: var(--muted); }
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+button {
+  padding: 9px 16px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .2s, transform .05s;
+}
+button:hover { background: var(--primary-hover); }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th {
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+tbody tr:hover { background: var(--surface-2); }
+
+/* =========================================================
+   APP SHELL
+   ========================================================= */
+.App { min-height: 100vh; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand { font-size: 20px; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 8px; }
+.brand span { color: var(--primary); }
+
+.page-nav { display: flex; gap: 6px; margin-left: 16px; flex: 1; }
+.page-nav button { background: transparent; color: var(--muted); }
+.page-nav button:hover { background: var(--surface-2); color: var(--text); }
+.page-nav button.active { background: var(--primary-soft); color: var(--primary); }
+
+.theme-toggle {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.theme-toggle:hover { background: var(--primary-soft); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 48px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.page-title { font-size: 26px; }
+.page-sub { color: var(--muted); margin: 0 0 20px; }
+
+/* =========================================================
+   STUDENTS PAGE
+   ========================================================= */
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.stat-card {
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+}
+.stat-card span { font-size: 13px; opacity: .85; }
+.stat-card b { display: block; font-size: 28px; }
+
+.student-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; align-items: center; }
+.form-actions { display: flex; gap: 8px; }
+.btn-secondary { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--primary-soft); }
+
+.table-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.table-head input { max-width: 280px; }
+.table-scroll { overflow-x: auto; }
+
+.avatar {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--primary-soft); color: var(--primary);
+  font-weight: 700; font-size: 13px; margin-right: 10px;
+}
+.name-cell { display: flex; align-items: center; font-weight: 600; }
+.badge { background: var(--primary-soft); color: var(--primary); padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+
+td button { padding: 5px 12px; font-size: 12px; margin-right: 6px; }
+.btn-danger { background: var(--danger); }
+.btn-danger:hover { background: var(--danger-hover); }
+.empty { text-align: center; color: var(--muted); padding: 28px 0; }
+
+@media (max-width: 640px) {
+  .page-nav { margin-left: 0; order: 3; width: 100%; }
+  .topbar-inner { justify-content: space-between; }
+}

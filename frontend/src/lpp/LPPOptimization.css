@@ -1,0 +1,51 @@
+/*
+ * LPP module styles. Uses the theme variables defined in App.css, so it switches
+ * automatically between light and dark mode. All selectors are prefixed .lpp-
+ */
+.lpp-page h2 { font-size: 26px; }
+.lpp-sub, .lpp-muted { color: var(--muted); }
+.lpp-sub { margin: 0 0 20px; }
+.lpp-card h3 { margin-top: 0; }
+
+.lpp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.lpp-grid label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 13px; color: var(--muted); }
+.lpp-grid .lpp-check { flex-direction: row; align-items: center; gap: 8px; font-weight: 500; color: var(--text); }
+.lpp-page .lpp-check input { width: auto; accent-color: var(--primary); }
+
+.lpp-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+.lpp-table { min-width: 640px; }
+.lpp-table th, .lpp-table td { padding: 8px 10px; font-size: 14px; }
+.lpp-table td:first-child { color: var(--primary); font-weight: 700; }
+.lpp-table td input:not([type="number"]) { min-width: 130px; }
+.lpp-table td input[type="number"] { min-width: 72px; }
+.lpp-table td button { margin-right: 0; }
+
+.lpp-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.lpp-btn-primary { background: var(--success); }
+.lpp-btn-primary:hover { background: var(--success-hover); }
+.lpp-btn-x { background: var(--danger); padding: 4px 10px; }
+.lpp-btn-x:hover { background: var(--danger-hover); }
+
+.lpp-errors { color: var(--danger); background: var(--warn-bg); padding: 12px 12px 12px 30px; border-radius: 8px; margin-top: 14px; }
+.lpp-info { color: var(--success); font-weight: 600; }
+
+.lpp-formulation pre { background: var(--surface-2); border: 1px solid var(--border); padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 14px; font-family: Consolas, 'Courier New', monospace; }
+.lpp-formulation h4 { margin: 16px 0 6px; color: var(--primary); }
+
+.lpp-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.lpp-stats div { background: linear-gradient(135deg, var(--primary), #8b5cf6); color: #fff; border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; }
+.lpp-stats span { font-size: 12px; opacity: .85; }
+.lpp-stats b { font-size: 26px; }
+
+.lpp-status { font-size: 12px; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); vertical-align: middle; margin-left: 6px; }
+.lpp-OPTIMAL { background: var(--ok-bg); color: var(--success); }
+.lpp-INFEASIBLE, .lpp-UNBOUNDED { background: var(--warn-bg); color: var(--danger); }
+
+.lpp-chart { width: 100%; max-width: 720px; }
+.lpp-chart text { fill: var(--text); }
+.lpp-bar { fill: var(--primary); }
+
+.lpp-history { list-style: none; padding: 0; margin: 0; }
+.lpp-history li { display: flex; justify-content: space-between; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+
+@media (max-width: 600px) { .lpp-actions button { flex: 1 1 45%; } }
